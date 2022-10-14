@@ -15,6 +15,8 @@ hi CursorLine term=standout cterm=bold ctermbg=17
 hi SpellLocal cterm=underline ctermfg=Blue
 hi Error term=standout cterm=bold ctermbg=124 ctermfg=15
 hi StorageClass term=standout cterm=bold ctermfg=118 ctermbg=235
+hi DIffDelete term=standout cterm=bold ctermfg=15
+hi ModeMsg term=standout cterm=bold ctermfg=15 ctermbg=25 
 
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
@@ -27,11 +29,13 @@ endfunction
 set statusline=%#Error#
 set statusline+=%3f 					"Path to the file
 set statusline+=\ |						"Separator
-set statusline+=%#StorageClass#
+set statusline+=%#DiffDelete#
 set statusline+=\ |						"Separator
 set statusline+=Filetype:			"Label (is personal)
 set statusline+=%4Y						"the type of file we are editing
 "Call funuction to execute the git
+set statusline+=\ |						"Separator
+set statusline+=%#StorageClass#
 set statusline+=%{StatuslineGit()}
 "Sapce between
 set statusline+=\  |
@@ -98,6 +102,9 @@ nnoremap <C-l>  :vertical resize -2<CR>
 nnoremap <C-h> :vertical resize +2<CR>
 nnoremap <C-q> :bd<CR>
 nnoremap <Space> :NERDTreeToggle<CR>
+
+"*******************NERDTREE PLUGINS CONF**********************
+let NERDTreeShowLineNumbers=1
 
 "Load all packages
 packloadall
