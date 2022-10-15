@@ -101,7 +101,13 @@ nnoremap <C-j>  :resize -2<CR>
 nnoremap <C-l>  :vertical resize -2<CR>
 nnoremap <C-h> :vertical resize +2<CR>
 nnoremap <C-q> :bd<CR>
+
+"REMAPS FOR PLUGINS
+"NerdTree
 nnoremap <Space> :NERDTreeToggle<CR>
+
+"Fzf
+nnoremap <C-f> :Files<CR>
 
 "*******************NERDTREE PLUGINS CONF**********************
 let NERDTreeShowLineNumbers=1
