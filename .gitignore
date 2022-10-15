@@ -1,5 +1,8 @@
 #	exclude everything
 */*
+.*
+makefile*
+goinfre
 
 #	exception to the rule
 .gitkeep
