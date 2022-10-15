@@ -17,6 +17,8 @@ hi Error term=standout cterm=bold ctermbg=124 ctermfg=15
 hi StorageClass term=standout cterm=bold ctermfg=118 ctermbg=235
 hi DIffDelete term=standout cterm=bold ctermfg=15
 hi ModeMsg term=standout cterm=bold ctermfg=15 ctermbg=25 
+hi Number term=standout cterm=bold ctermfg=172
+hi Character term=standout cterm=bold  ctermfg=208
 
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
