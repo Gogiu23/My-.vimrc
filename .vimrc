@@ -15,7 +15,12 @@ set autoindent
 set cursorline
 set smartindent
 set noswapfile
+set splitright
+set wildmode=full
+set complete-=i
+set foldlevelstart=2
 set ttyfast
+set showcmd ruler laststatus=2
 nohl
 set hlsearch
 set nobackup
@@ -101,6 +106,11 @@ set statusline+=\ |						"Separator
 "*********************************
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>e :source $MYVIMRC<cr>
+
+"MOVING FASTER BETWEEN TABS AND BUFFS
+"***********************************
+nnoremap <A-l> :bnext<CR>
+nnoremap <A-h> :bp<CR>
 
 "SAVING TEXT
 "************
