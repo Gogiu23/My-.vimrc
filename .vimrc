@@ -2,6 +2,45 @@ let g:user42 = 'gdominic'
 let g:mail42 = 'gdominic@student.42barcelona.com'
 set history=1000
 set backspace=indent,eol,start
+syntax enable
+set nocompatible
+set wildmenu
+set wildoptions=pum
+set path+=**
+filetype plugin on
+set relativenumber
+set laststatus=2
+set number
+set autoindent
+set cursorline
+set smartindent
+set noswapfile
+set ttyfast
+nohl
+set hlsearch
+set nobackup
+set encoding=utf8
+set noexpandtab shiftwidth=4 tabstop=4
+let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+command! MakeTags !ctags -R .
+"
+"*******************NERDTREE PLUGINS CONF**********************
+let NERDTreeShowLineNumbers=1
+let NERDTreeChDirMode=3
+let NERDTreeCascadeOpenSingleChildDir=0
+
+"############## NERD TREE INCLUDE IN VIM ##################
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_preview=1
+let g:netrw_winsize=10
+
+"************* TERM SIZE WINDOWS ***********************
+set termwinsize=10*0
+nnoremap <leader>t :below terminal<CR> 
+
 "*************HIGHLIGHTS************************
 hi Search cterm=bold ctermfg=red ctermbg=yellow
 hi IncSearch cterm=bold ctermfg=black ctermbg=red
@@ -19,7 +58,7 @@ hi DIffDelete term=standout cterm=bold ctermfg=15
 hi ModeMsg term=standout cterm=bold ctermfg=15 ctermbg=25 
 hi Number term=standout cterm=bold ctermfg=172
 hi Character term=standout cterm=bold  ctermfg=208
-
+colorscheme habamax  
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
@@ -55,21 +94,6 @@ set statusline+=T/L:%-4L				"Total lines
 set statusline+=\ |						"Separator
 set statusline+=Columns:%-2c
 set statusline+=\ |						"Separator
-set relativenumber
-set laststatus=2
-set number
-syntax enable
-set autoindent
-set cursorline
-set smartindent
-set noswapfile
-set ttyfast
-nohl
-set hlsearch
-set nobackup
-set encoding=utf8
-set noexpandtab shiftwidth=4 tabstop=4
-let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 
 "=========================KEYMAPS============================================
 
@@ -111,8 +135,6 @@ nnoremap <Space> :NERDTreeToggle<CR>
 "Fzf
 nnoremap <C-f> :Files<CR>
 
-"*******************NERDTREE PLUGINS CONF**********************
-let NERDTreeShowLineNumbers=1
 
 "Load all packages
 packloadall
