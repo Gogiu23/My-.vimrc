@@ -1,10 +1,15 @@
+"My Vimrc config file
+
+"Opts for the header 42
 let g:user42 = 'gdominic'
 let g:mail42 = 'gdominic@student.42barcelona.com'
-set history=1000
+
+set history=500
 set backspace=indent,eol,start
 syntax enable
 set nocompatible
 set wildmenu
+set wildmode=full
 set wildoptions=pum
 set path+=**
 filetype plugin on
@@ -16,7 +21,6 @@ set cursorline
 set smartindent
 set noswapfile
 set splitright
-set wildmode=full
 set complete-=i
 set foldlevelstart=2
 set ttyfast
@@ -28,6 +32,24 @@ set encoding=utf8
 set noexpandtab shiftwidth=4 tabstop=4
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 command! MakeTags !ctags -R .
+"
+"Function for moving between tabs and buffers
+"
+function! TheNext()
+	if exists ( '*tabpagenr' ) && tabpagenr('$') != 1
+		normal gt
+	else
+		execute ":bnext"
+	endif
+endfunction
+
+function! Theprev()
+	if exists ( '*tabpagenr' ) && tabpagenr('$') != 1
+		normal gT
+	else
+		execute ":bprev"
+	endif
+endfunction
 "
 "*******************NERDTREE PLUGINS CONF**********************
 let NERDTreeShowLineNumbers=1
@@ -109,8 +131,8 @@ nnoremap <leader>e :source $MYVIMRC<cr>
 
 "MOVING FASTER BETWEEN TABS AND BUFFS
 "***********************************
-nnoremap <A-l> :bnext<CR>
-nnoremap <A-h> :bp<CR>
+nnoremap <A-l> :call TheNext()<CR>
+nnoremap <A-h> :call Theprev()<CR>
 
 "SAVING TEXT
 "************
