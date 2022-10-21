@@ -65,7 +65,7 @@ let g:netrw_preview=1
 let g:netrw_winsize=10
 
 "************* TERM SIZE WINDOWS ***********************
-set termwinsize=10*0
+set termwinsize=30*0
 nnoremap <leader>t :below terminal<CR> 
 
 "*************HIGHLIGHTS************************
