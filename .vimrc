@@ -167,6 +167,7 @@ nnoremap <Space> :NERDTreeToggle<CR>
 "Fzf
 nnoremap <C-f> :Files<CR>
 
+autocmd BufNewFile * :Stdheader
 
 "Load all packages
 packloadall
