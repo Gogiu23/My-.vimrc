@@ -1,10 +1,31 @@
 "My Vimrc config file
+call plug#begin()
+
+"check errors and pre processing code
+Plug 'https://github.com/dense-analysis/ale.git'
+
+"colorscheme nightfly
+Plug 'https://github.com/bluz71/vim-nightfly-colors.git'
+
+"ycm vim
+Plug 'https://github.com/ycm-core/YouCompleteMe.git'
+
+call plug#end()
 
 "Opts for the header 42
 let g:user42 = 'gdominic'
 let g:mail42 = 'gdominic@student.42barcelona.com'
 
-set history=500
+
+"=-=-=-=-=-=-=-=-=-=-=- CONFIG YCM =-=-=-=-=-=-=-=-=-=-=-=-
+let g:ycm_enable_semantic_highlighting=1
+let g:ycm_enable_inlay_hints=1
+hi link YcmInlayHint Comment
+let g:ycm_enable_inlay_hints=1
+
+"-=-=-=-=-=-=-=-=-=-=- GENERAL USE FOR VIM =-=-=-=-=-=-=-=
+set history=300
+set spell
 set backspace=indent,eol,start
 syntax enable
 set nocompatible
@@ -31,7 +52,11 @@ set nobackup
 set encoding=utf8
 set noexpandtab shiftwidth=4 tabstop=4
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 command! MakeTags !ctags -R .
+let g:lightline = { 'colorscheme': 'nightfly' }
 "
 "Function for moving between tabs and buffers
 "
@@ -85,7 +110,7 @@ hi DIffDelete term=standout cterm=bold ctermfg=15
 hi ModeMsg term=standout cterm=bold ctermfg=15 ctermbg=25 
 hi Number term=standout cterm=bold ctermfg=172
 hi Character term=standout cterm=bold  ctermfg=208
-colorscheme habamax  
+colorscheme nightfly 
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
@@ -142,10 +167,10 @@ inoremap jk <esc>
 inoremap <esc> <nop>
 nnoremap L <end>
 nnoremap H <home>
-nnoremap <Down> <nop>
-nnoremap <Up> <nop>
-nnoremap <Left> <nop>
-nnoremap <Right> <nop>
+nmap <Down> <nop>
+nmap <Up> <nop>
+nmap <Left> <nop>
+nmap <Right> <nop>
 
 "MOVING TEXT *
 "*************
