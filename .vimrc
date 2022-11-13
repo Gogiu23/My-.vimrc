@@ -11,6 +11,24 @@ Plug 'https://github.com/bluz71/vim-nightfly-colors.git'
 "ycm vim
 Plug 'https://github.com/ycm-core/YouCompleteMe.git'
 
+"FZF
+Plug 'https://github.com/junegunn/fzf.git'
+
+"FZF_VIM
+Plug 'https://github.com/junegunn/fzf.vim.git'
+
+"Header 42
+Plug 'https://github.com/42Paris/42header.git'
+
+"Colorscheme Official Vim
+Plug 'https://github.com/vim/colorschemes.git'
+
+"Nerd three
+Plug 'https://github.com/preservim/nerdtree.git'
+
+"VIM devicons
+Plug 'https://github.com/ryanoasis/vim-devicons.git'
+
 call plug#end()
 
 "=-=-=-=-=- Opts for the header 42 =-=-=-=-=-=-=-=-=-=-=
