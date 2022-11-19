@@ -51,7 +51,7 @@ imap <silent> <C-l> <Plug>(YCMToggleSignatureHelp)
 set history=300
 "set spell
 set backspace=indent,eol,start
-syntax enable
+syntax on
 set nocompatible
 set wildmenu
 set wildmode=full
@@ -195,16 +195,25 @@ nnoremap <C-z> :wqa<CR>
 inoremap jk <esc>
 inoremap <esc> <nop>
 nnoremap L <end>
-nnoremap H <home>
+map H <home>
 nmap <Down> <nop>
 nmap <Up> <nop>
 nmap <Left> <nop>
 nmap <Right> <nop>
 
+"NERD COMMENTER MYSELF
+"*********************
+"commenter
+nnoremap cc :normal Hi//jkj<CR>
+
+"uncommenter
+nnoremap ,c :normal Hxxj<CR>
+
 "MOVING TEXT *
 "*************
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
+
 
 "RESIZE WINDOWS*
 "***************
