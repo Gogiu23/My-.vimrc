@@ -42,7 +42,7 @@ let g:mail42 = 'gdominic@student.42barcelona.com'
 "let g:ycm_enable_semantic_highlighting=1
 "let g:ycm_enable_inlay_hints=1
 "hi link YcmInlayHint Comment
-imap <silent> <C-l> <Plug>(YCMToggleSignatureHelp)
+"imap <silent> <C-l> <Plug>(YCMToggleSignatureHelp)
 "let g:ycm_enable_inlay_hints=1
 
 
@@ -75,7 +75,6 @@ set hlsearch
 set nobackup
 set encoding=utf8
 set noexpandtab shiftwidth=4 tabstop=4
-let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 command! MakeTags !ctags -R .
 
 "=-=-=-=-=-=-=-=- PLUG NIGHTFLY COLORSCHEME =-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -109,12 +108,13 @@ let NERDTreeChDirMode=3
 let NERDTreeCascadeOpenSingleChildDir=0
 
 "=-=-=-=-=-=-=- NERD TREE INCLUDE IN VIM =-=-=-=-=-=-=-=-=-
-let g:netrw_banner=0
-let g:netrw_browse_split=4
-let g:netrw_altv=1
-let g:netrw_liststyle=3
-let g:netrw_preview=1
-let g:netrw_winsize=10
+"let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+"let g:netrw_banner=0
+"let g:netrw_browse_split=4
+"let g:netrw_altv=1
+"let g:netrw_liststyle=3
+"let g:netrw_preview=1
+"let g:netrw_winsize=10
 
 "************* TERM SIZE WINDOWS ***********************
 set termwinsize=30*0
